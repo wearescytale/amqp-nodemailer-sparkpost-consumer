@@ -47,7 +47,7 @@ Whenever the `NODE_ENV` environment variable is `prod`, `production` or `staging
 | `sandbox`                   | `NMSP_SANDBOX`           |
 | `sparkpost.sparkPostApiKey` | `NMSP_SPARKPOST_API_KEY` |
 
-**Note:** For the `NMSP_DEBUG` and `NMSP_SANDBOX` environment variables, only the existence of these variables are checked and the value is never used. As long as these variables have a value, their respective options will be set to `true`.
+**Note:** For the `NMSP_DEBUG` and `NMSP_SANDBOX` environment variables, only the existence of these variables is checked and the value is never used. As long as these variables have a value, their respective options will be set to `true`.
 
 ## Adding emails to the queue
 
