@@ -4,11 +4,16 @@
   "description": "A nodemailer message queue consumer setup for SparkPost using the AMQP protocol.",
   "main": "consumer.js",
   "dependencies": {
-    "amqplib": "^0.5.1"
+    "amqplib": "^0.5.1",
+    "nodemailer": "^4.0.1",
+    "nodemailer-sparkpost-transport": "^2.0.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  },
   "scripts": {
-    "start": "NODE_ENV=development node consumer.js",
+    "start": "node consumer.js",
+    "start:dev": "NODE_ENV=development nodemon consumer.js",
     "start:production": "NODE_ENV=production node consumer.js"
   },
   "keywords": [
