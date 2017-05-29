@@ -26,6 +26,17 @@ For a development environment (automatic restarts upon file changes) run:
 npm run start:dev
 ```
 
+## Configuration
+
+The following options may be overriden in the appropriate switch case statement.
+
+- `debug` (Boolean) - Turns the application more verbose. Be careful with this option in production environments because printing to stdout is a synchronous operation.
+- `sandbox` (Boolean) - If enabled, the application won't contact SparkPost and will simply acknowledge the received message.
+- `amqp` (String) - The URL of your AMQP server.
+- `queue` (String) - The name for the queue the application creates and uses.
+- `messagePrefetch` (Integer) - How many messages sent over the channel can be awaiting acknowledgement.
+- `sparkpost` (Object) - The SparkPost Nodemailer transport options. The only required property of this object is the `sparkPostApiKey`.
+
 ## Adding emails to the queue
 
 You can test sending emails through the message queue by adding the following code to the bottom of `consumer.js` and running `npm run start:dev`
