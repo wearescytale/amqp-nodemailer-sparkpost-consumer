@@ -11,7 +11,7 @@ const Config = function() {
         sparkPostApiKey: ''
     };
 
-    switch(process.env.NODE_ENV) {
+    switch (process.env.NODE_ENV) {
         case 'prod':
         case 'production':
         case 'staging':

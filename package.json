@@ -9,6 +9,7 @@
     "nodemailer-sparkpost-transport": "^2.0.0"
   },
   "devDependencies": {
+    "eslint": "^3.19.0",
     "nodemon": "^1.11.0"
   },
   "scripts": {
