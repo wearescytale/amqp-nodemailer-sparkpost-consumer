@@ -37,6 +37,18 @@ The following options may be overriden in the appropriate switch case statement.
 - `messagePrefetch` (Integer) - How many messages sent over the channel can be awaiting acknowledgement.
 - `sparkpost` (Object) - The SparkPost Nodemailer transport options. The only required property of this object is the `sparkPostApiKey`.
 
+Whenever the `NODE_ENV` environment variable is `prod`, `production` or `staging`, the following values are read from environment variables by default:
+
+|           Property          |   Environment Variable   |
+|:---------------------------:|:------------------------:|
+| `amqp`                      | `NMSP_AMQP_URL`          |
+| `queue`                     | `NMSP_QUEUE_NAME`        |
+| `debug`                     | `NMSP_DEBUG`             |
+| `sandbox`                   | `NMSP_SANDBOX`           |
+| `sparkpost.sparkPostApiKey` | `NMSP_SPARKPOST_API_KEY` |
+
+**Note:** For the `NMSP_DEBUG` and `NMSP_SANDBOX` environment variables, only the existence of these variables are checked and the value is never used. As long as these variables have a value, their respective options will be set to `true`.
+
 ## Adding emails to the queue
 
 You can test sending emails through the message queue by adding the following code to the bottom of `consumer.js` and running `npm run start:dev`

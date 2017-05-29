@@ -8,20 +8,18 @@ const Config = function() {
     this.queue = 'nodemailer-sparkpost';
     this.messagePrefetch = 1;
     this.sparkpost = {
-        // sparkPostApiKey: '',
-        // campaign_id: {},
-        // metadata: {},
-        // options: {},
-        // substitution_data: {}
+        sparkPostApiKey: ''
     };
 
     switch(process.env.NODE_ENV) {
         case 'prod':
         case 'production':
-            this.amqp = '$YOUR_AMQP_SERVER_URL';
-            this.queue = '$YOUR_QUEUE_NAME';
-            this.debug = false;
-            this.sandbox = false;
+        case 'staging':
+            this.amqp = process.env.NMSP_AMQP_URL;
+            this.queue = process.env.NMSP_QUEUE_NAME;
+            this.debug = !!process.env.NMSP_DEBUG;
+            this.sandbox = !!process.env.NMSP_SANDBOX;
+            this.sparkpost.sparkPostApiKey = process.env.NMSP_SPARKPOST_API_KEY;
 
             break;
         case 'dev':
